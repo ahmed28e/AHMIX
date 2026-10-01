@@ -184,3 +184,13 @@ MIT © 2026 **AHMIX — Ahmed Abdelfatah**
 <div align="center">
   <sub>Built with obsessive attention to detail. No shortcuts.</sub>
 </div>
+
+---
+
+## Scan to Visit
+
+<div align="center">
+  <img src="assets/img/qr-ahmix.png" alt="QR Code — ahmed28e.github.io/AHMIX" width="220"/>
+  <br/>
+  <sub><code>https://ahmed28e.github.io/AHMIX/</code></sub>
+</div>
