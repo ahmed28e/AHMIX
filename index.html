@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AHMIX — أحمد عبدالفتاح | أكثر من مجرد ذكاء اصطناعي</title>
+  <meta name="description" content="الموقع الرسمي لأحمد عبدالفتاح (AHMIX) — صانع محتوى الذكاء الاصطناعي، مطور ويب، مصمم جرافيك ومونتير فيديو. AI. CREATE. BUILD. THE FUTURE.">
+  <meta name="theme-color" content="#05060f">
+  <meta property="og:title" content="AHMIX — أحمد عبدالفتاح">
+  <meta property="og:description" content="أكثر من مجرد ذكاء اصطناعي — محتوى تعليمي، تطوير ويب، جرافيك ديزاين ومونتاج فيديو.">
+  <meta property="og:image" content="./assets/img/hero.jpg">
+  <meta property="og:type" content="website">
+  <script>
+    (function () {
+      const path = window.location.pathname || '/';
+      const segments = path.split('/').filter(Boolean);
+      const repo = segments[0] || '';
+      const isGitHubPages = window.location.hostname.endsWith('github.io');
+      const baseHref = isGitHubPages && repo ? '/' + repo + '/' : './';
+      document.write('<base href="' + baseHref + '">');
+    })();
+  </script>
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>
+    .preloader, .cursor-dot, .cursor-glow { display: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  </style></noscript>
+</head>
+<body>
+
+  <!-- شريط تقدم القراءة -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+  <!-- المؤشر المخصص -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============ شاشة الافتتاح السينمائية ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-orbit" aria-hidden="true">
+        <span class="orbit-ring r1"></span>
+        <span class="orbit-ring r2"></span>
+        <span class="orbit-core"></span>
+      </div>
+      <img src="./assets/img/logo-mark.png" alt="" class="preloader-mark" id="preloaderMark">
+      <h2 class="preloader-word" id="preloaderWord" aria-label="AHMIX">
+        <span>A</span><span>H</span><span>M</span><span>I</span><span>X</span>
+      </h2>
+      <p class="preloader-tag">MORE&nbsp;THAN&nbsp;JUST&nbsp;AI</p>
+      <div class="preloader-bar"><span id="preloaderBar"></span></div>
+    </div>
+  </div>
+
+  <!-- ============ الترويسة ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="AHMIX — الرئيسية">
+        <img src="./assets/img/logo-mark.png" alt="شعار AHMIX" class="brand-mark">
+        <span class="brand-name">AHMIX</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+        <a href="#home" class="nav-link is-active">الرئيسية</a>
+        <a href="#about" class="nav-link">من أنا</a>
+        <a href="#skills" class="nav-link">مهاراتي</a>
+        <a href="#works" class="nav-link">أعمالي</a>
+        <a href="#gallery" class="nav-link">المعرض</a>
+        <a href="#certificates" class="nav-link">شهاداتي</a>
+        <a href="#contact" class="nav-link">تواصل</a>
+        <a href="https://wa.me/201066735981" target="_blank" rel="noopener" class="btn btn-wa nav-cta">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1 2.56.13.17 1.76 2.67 4.25 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.28-.25-.13-1.47-.72-1.69-.81-.24-.08-.41-.12-.58.12-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.23-.74-.65-1.23-1.47-1.38-1.72-.14-.24-.02-.38.11-.5.11-.12.25-.3.37-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.34-.79-1.84-.21-.48-.42-.42-.58-.43h-.5Z"/></svg>
+          واتساب
+        </a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- قائمة الجوال -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="قائمة الجوال">
+      <a href="#home" class="m-link">الرئيسية</a>
+      <a href="#about" class="m-link">من أنا</a>
+      <a href="#skills" class="m-link">مهاراتي</a>
+      <a href="#works" class="m-link">أعمالي</a>
+      <a href="#gallery" class="m-link">المعرض</a>
+      <a href="#certificates" class="m-link">شهاداتي</a>
+      <a href="#contact" class="m-link">تواصل</a>
+      <a href="https://wa.me/201066735981" target="_blank" rel="noopener" class="btn btn-wa m-cta">تواصل عبر واتساب</a>
+    </nav>
+    <p class="m-foot">AHMIX — MORE THAN JUST AI</p>
+  </div>
+
+  <main>
+    <!-- ============ الواجهة الرئيسية ============ -->
+    <section class="hero" id="home">
+      <canvas id="heroParticles" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow g1" aria-hidden="true"></div>
+      <div class="hero-glow g2" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-chip reveal">
+            <span class="chip-dot"></span>
+            أهلًا بك في عالمي الرقمي
+          </p>
+          <h1 class="hero-title reveal" data-delay="1">
+            أنا <span class="grad-text">أحمد عبدالفتاح</span>
+          </h1>
+          <p class="hero-brand reveal" data-delay="2">
+            <span class="brand-word">AHMIX</span>
+            <span class="brand-sep"></span>
+            <span class="type-wrap">أكثر من مجرد ذكاء اصطناعي</span>
+          </p>
+          <p class="hero-role reveal" data-delay="3">
+            <span id="typeRotator" class="type-rotator"></span><span class="type-caret"></span>
+          </p>
+          <p class="hero-desc reveal" data-delay="4">
+            أحوّل الذكاء الاصطناعي والإبداع والتقنية إلى محتوى تعليمي وتجارب رقمية
+            وتصاميم وأعمال مونتاج تُلهم وتُبسّط المستقبل —
+            <strong>AI. CREATE. BUILD. THE FUTURE.</strong>
+          </p>
+          <div class="hero-cta reveal" data-delay="5">
+            <a href="#works" class="btn btn-primary magnet">
+              <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              شاهد أعمالي
+            </a>
+            <a href="https://wa.me/201066735981" target="_blank" rel="noopener" class="btn btn-wa magnet">
+              <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1 2.56.13.17 1.76 2.67 4.25 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.28-.25-.13-1.47-.72-1.69-.81-.24-.08-.41-.12-.58.12-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.23-.74-.65-1.23-1.47-1.38-1.72-.14-.24-.02-.38.11-.5.11-.12.25-.3.37-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.34-.79-1.84-.21-.48-.42-.42-.58-.43h-.5Z"/></svg>
+              تواصل معي
+            </a>
+            <a href="#about" class="btn btn-ghost magnet">تعرّف عليّ أكثر</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="3">
+          <div class="hero-duo">
+            <div class="hero-portrait">
+              <span class="portrait-ring" aria-hidden="true"></span>
+              <img src="./assets/img/ahmed-portrait.jpg" alt="أحمد عبدالفتاح — صورة شخصية" class="portrait-photo" fetchpriority="high">
+              <div class="portrait-glow" aria-hidden="true"></div>
+            </div>
+            <div class="hero-frame" id="heroFrame" data-tilt>
+              <span class="frame-ring" aria-hidden="true"></span>
+              <img src="./assets/img/hero.jpg" alt="أحمد عبدالفتاح — AHMIX في استوديو العمل" class="hero-photo" fetchpriority="high">
+              <div class="frame-shine" aria-hidden="true"></div>
+              <div class="float-badge b1">
+                <img src="./assets/img/logo-mark.png" alt="" aria-hidden="true">
+              </div>
+              <div class="float-chip c1">AI Tools</div>
+              <div class="float-chip c2">Web Dev</div>
+              <div class="float-chip c3">Design</div>
+              <div class="float-chip c4">Editing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="مرر للأسفل">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span>اكتشف المزيد</span>
+      </a>
+    </section>
+
+    <!-- ============ الشريط المتحرك ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <!-- يتولد المحتوى عبر JavaScript -->
+      </div>
+    </div>
+
+    <!-- ============ من أنا ============ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— من أنا</p>
+          <h2 class="section-title">قصة <span class="grad-text">AHMIX</span></h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <div class="about-frame" data-tilt>
+              <img src="./assets/img/bomm.jpeg" alt="تجربة إبداعية بالذكاء الاصطناعي — أحمد عبدالفتاح" loading="lazy">
+              <div class="about-badge">
+                <img src="./assets/img/logo-mark.png" alt="">
+                <span>هوية إبداعية بالذكاء الاصطناعي</span>
+              </div>
+            </div>
+            <span class="orbit-deco" aria-hidden="true"></span>
+          </div>
+
+          <div class="about-copy">
+            <h3 class="reveal">أصنع المستقبل بذكاء اصطناعي…<br>وأشارك الطريقة معك</h3>
+            <p class="reveal" data-delay="1">
+              أنا <strong>أحمد عبدالفتاح</strong>، وأعرفني باسم علامتي <strong>AHMIX</strong>.
+              بدأت رحلتي من شغف حقيقي بالتقنية والإبداع، وتحوّل هذا الشغف إلى عالم رقمي
+              خاص أجمع فيه بين الذكاء الاصطناعي وتطوير الويب والتصميم والمونتاج.
+            </p>
+            <p class="reveal" data-delay="2">
+              أقدّم بالعربية محتوى تعليميًا يشرح أدوات الذكاء الاصطناعي ويجعلها في متناول الجميع،
+              وأنتج أعمالًا إبداعية — من الفيديوهات المولّدة بالكامل بالـAI إلى الهويات البصرية —
+              لأنني أؤمن أن <strong>الذكاء الاصطناعي ليس مجرد أداة، بل طريقة جديدة للتفكير والإبداع</strong>.
+            </p>
+
+            <ul class="about-values">
+              <li class="reveal" data-delay="1">
+                <span class="v-letter">AI</span>
+                <div><strong>ذكاء</strong><p>أستخدم أحدث أدوات الذكاء الاصطناعي في كل مرحلة من عملي</p></div>
+              </li>
+              <li class="reveal" data-delay="2">
+                <span class="v-letter">CR</span>
+                <div><strong>إبداع</strong><p>فكرة مختلفة وزاوية جديدة في كل تصميم وفيديو ومشروع</p></div>
+              </li>
+              <li class="reveal" data-delay="3">
+                <span class="v-letter">BL</span>
+                <div><strong>بناء</strong><p>أحوّل الأفكار إلى منتجات رقمية حقيقية قابلة للمشاهدة والاستخدام</p></div>
+              </li>
+              <li class="reveal" data-delay="4">
+                <span class="v-letter">FU</span>
+                <div><strong>مستقبل</strong><p>أبني حضورًا رقميًا يواكب الغد ويشاركه مع الناس بالعربية</p></div>
+              </li>
+            </ul>
+
+            <p class="about-sign reveal" data-delay="2">
+              <span class="sign-word">AHMIX</span> — More Than Just AI
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ المهارات ============ -->
+    <section class="skills section" id="skills">
+      <div class="skills-glow" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— مهاراتي وخبراتي</p>
+          <h2 class="section-title">ما الذي <span class="grad-text">أتميز</span> به؟</h2>
+          <p class="section-sub">أربعة مجالات أجمعها تحت مظلة AHMIX لأصنع تجربة رقمية متكاملة</p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal" data-delay="1" data-tilt>
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 2a4 4 0 0 1 4 4c0 1.1-.45 2.1-1.17 2.83A4 4 0 0 1 18 12a4 4 0 0 1-3.17 3.9A4 4 0 1 1 9.17 15.9A4 4 0 0 1 6 12a4 4 0 0 1 3.17-3.17A4 4 0 0 1 12 2Z"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3>أدوات الذكاء الاصطناعي</h3>
+            <p>إتقان عميق لأدوات الـAI في توليد النصوص والصور والفيديو، وبناء سير عمل ذكي يضاعف الإنتاجية والإبداع.</p>
+            <div class="skill-tags">
+              <span>ChatGPT</span><span>توليد الصور</span><span>توليد الفيديو</span><span>كتابة البرومبت</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-delay="2" data-tilt>
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-11-4 14"/></svg>
+            </div>
+            <h3>تطوير الويب</h3>
+            <p>بناء مواقع وتجارب رقمية عصرية بواجهات سريعة وتفاعلية وتصميم متجاوب مع كل الأجهزة — مثل هذا الموقع.</p>
+            <div class="skill-tags">
+              <span>واجهات تفاعلية</span><span>تصميم متجاوب</span><span>تجربة مستخدم</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-delay="3" data-tilt>
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.2 4.9 5.3.6-4 3.6 1.1 5.2L12 14.6l-4.6 2.7 1.1-5.2-4-3.6 5.3-.6L12 3Z"/></svg>
+            </div>
+            <h3>الجرافيك ديزاين</h3>
+            <p>تصميم هويات بصرية متكاملة وشعارات ومحتوى سوشيال ميديا — بدءًا من هوية AHMIX نفسها بكل تفاصيلها.</p>
+            <div class="skill-tags">
+              <span>هوية بصرية</span><span>شعارات</span><span>سوشيال ميديا</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-delay="4" data-tilt>
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h7A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 4 16.5v-9ZM16 10l4-2.5v9L16 14m-6-4v4m-2-2h4"/></svg>
+            </div>
+            <h3>مونتاج الفيديو</h3>
+            <p>إخراج ومونتاج محتوى فيديو احترافي — من الريلز التعليمية إلى الإعلانات السينمائية المولّدة بالذكاء الاصطناعي.</p>
+            <div class="skill-tags">
+              <span>ريلز</span><span>إعلانات</span><span>موشن جرافيك</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="content-strip reveal" data-delay="2">
+          <div class="strip-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5m0 0a5 5 0 1 0-4.9-6M12 13a5 5 0 1 1 4.9-6M7 21h10"/></svg>
+          </div>
+          <div>
+            <strong>صناعة المحتوى التعليمي</strong>
+            <p>أقدّم بالعربية محتوى يشرح الذكاء الاصطناعي وأدواته بأسلوب بسيط وعملي — مثل سلسلة نصائح ChatGPT — لأصل بالقمة إلى الناس وأجعل التقنية مفهومة للجميع.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ الأعمال ============ -->
+    <section class="works section" id="works">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— أعمالي ومشاريعي</p>
+          <h2 class="section-title">مختارات من <span class="grad-text">عالمي</span></h2>
+          <p class="section-sub">اضغط على أي مشروع لمشاهدته بالكامل</p>
+        </header>
+
+        <div class="works-grid">
+          <article class="work-card wide reveal" data-delay="1" data-tilt>
+            <button class="work-media" data-video="assets/video/reel-chatgpt.mp4" data-title="6 أمور ستغيّر طريقة استخدامك ChatGPT" aria-label="تشغيل فيديو: 6 أمور ستغير طريقة استخدامك ChatGPT">
+              <img src="./assets/img/reel1-poster.jpg" alt="ريلز: 6 أمور ستغير طريقة استخدامك ChatGPT" loading="lazy">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="work-type">ريلز تعليمي</span>
+            </button>
+            <div class="work-body">
+              <h3>6 أمور ستغيّر طريقة استخدامك ChatGPT</h3>
+              <p>حلقة من محتواي التعليمي: نصائح عملية تشرح أقوى استخدامات ChatGPT بأسلوب عربي مبسط وعملّي.</p>
+              <div class="work-meta">
+                <span class="meta-row"><b>دوري:</b> إعداد، تقديم، مونتاج وإخراج</span>
+                <div class="skill-tags"><span>ChatGPT</span><span>سكربت</span><span>مونتاج</span><span>تقديم</span></div>
+              </div>
+              <p class="work-result"><b>الفكرة:</b> جعل الذكاء الاصطناعي أداة يومية مفهومة لكل شخص عربي.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-delay="2" data-tilt>
+            <button class="work-media" data-video="assets/video/reel-ai-ad.mp4" data-title="إعلان سينمائي مولّد بالذكاء الاصطناعي" aria-label="تشغيل فيديو: إعلان سينمائي مولد بالذكاء الاصطناعي">
+              <img src="./assets/img/reel2-poster.jpg" alt="إعلان سينمائي مولد بالذكاء الاصطناعي" loading="lazy">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="work-type">AI Video</span>
+            </button>
+            <div class="work-body">
+              <h3>إعلان سينمائي مولّد بالـAI بالكامل</h3>
+              <p>إعلان قصير بجودة سينمائية — من الفكرة إلى الفيديو النهائي — مولّد بالكامل بأدوات الذكاء الاصطناعي.</p>
+              <div class="work-meta">
+                <span class="meta-row"><b>دوري:</b> كتابة البرومبت والإخراج والمونتاج</span>
+                <div class="skill-tags"><span>توليد فيديو</span><span>برومبت</span><span>إخراج</span></div>
+              </div>
+              <p class="work-result"><b>النتيجة:</b> قصة بصرية كاملة دون كاميرا واحدة — الذكاء الاصطناعي هو الاستوديو.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-delay="3" data-tilt>
+            <button class="work-media is-image" data-image="./assets/img/creative.jpg" data-title="هوية AHMIX — تجربة إبداعية بالذكاء الاصطناعي" aria-label="عرض صورة: تجربة إبداعية بالذكاء الاصطناعي">
+              <img src="./assets/img/creative.jpg" alt="تجربة تصوير إبداعية بالذكاء الاصطناعي" loading="lazy">
+              <span class="work-type">AI Art</span>
+            </button>
+            <div class="work-body">
+              <h3>جلسة إبداعية بالذكاء الاصطناعي</h3>
+              <p>صورة فنية كاملة الصنعة: اتجاه فني وتفاصيل حركية مولّدة بالـAI — حدود الخيال هي فقط الحدود.</p>
+              <div class="work-meta">
+                <span class="meta-row"><b>دوري:</b> اتجاه فني وتوليد ومعالجة</span>
+                <div class="skill-tags"><span>توليد صور</span><span>اتجاه فني</span></div>
+              </div>
+              <p class="work-result"><b>الفكرة:</b> دمج الموضة والإبهار البصري بأسلوب لا يمكن تصويره تقليديًا.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-delay="4" data-tilt>
+            <button class="work-media is-image" data-image="./assets/img/logo-full.png" data-title="هوية AHMIX البصرية" aria-label="عرض صورة: هوية AHMIX البصرية">
+              <img src="./assets/img/logo-full.png" alt="شعار AHMIX والهوية البصرية" loading="lazy" class="on-dark">
+              <span class="work-type">Branding</span>
+            </button>
+            <div class="work-body">
+              <h3>هوية AHMIX البصرية</h3>
+              <p>شعار وهوية متكاملة: مونوجرام هندسي بمدارات ذرية تعكس فكرة "ذكاء في حركة دائمة" بتدرج نفسي–تقني مميز.</p>
+              <div class="work-meta">
+                <span class="meta-row"><b>دوري:</b> تصميم الشعار والهوية كاملة</span>
+                <div class="skill-tags"><span>براندنج</span><span>شعار</span><span>هوية بصرية</span></div>
+              </div>
+              <p class="work-result"><b>الفكرة:</b> علامة تختصر الشخصية: تقنية، فخمة، ومستقبلية — More Than Just AI.</p>
+            </div>
+          </article>
+        </div>
+
+          <article class="work-card wide reveal" data-delay="5" data-tilt>
+            <button class="work-media" data-video="assets/video/cinematic-shot.mp4" data-title="لقطة سينمائية مولّدة بالذكاء الاصطناعي" aria-label="تشغيل فيديو: لقطة سينمائية مولّدة بالذكاء الاصطناعي">
+              <img src="./assets/img/cinematic-poster.jpg" alt="لقطة سينمائية بالذكاء الاصطناعي — مشهد سينمائي مبهر" loading="lazy">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="work-type">Cinematic AI</span>
+            </button>
+            <div class="work-body">
+              <h3>لقطة سينمائية مولّدة بالذكاء الاصطناعي</h3>
+              <p>مشهد سينمائي مبهر مولّد بالكامل بالذكاء الاصطناعي — تصوير افتراضي بجودة أفلام هوليوود، من البرومبت إلى الإخراج النهائي.</p>
+              <div class="work-meta">
+                <span class="meta-row"><b>دوري:</b> كتابة البرومبت والإخراج والمونتاج</span>
+                <div class="skill-tags"><span>توليد فيديو</span><span>سينمائي</span><span>AI</span><span>إخراج</span></div>
+              </div>
+              <p class="work-result"><b>النتيجة:</b> مشهد سينمائي يستحيل تصويره بكاميرا تقليدية — الذكاء الاصطناعي هو المخرج.</p>
+            </div>
+          </article>
+
+        <!-- ====== العمل المميز: فيديو سينمائي مولّد بالكامل بالذكاء الاصطناعي ====== -->
+        <div class="featured reveal" data-delay="1">
+          <div class="featured-glow" aria-hidden="true"></div>
+
+          <div class="featured-copy">
+            <p class="featured-kicker">— العمل المميز</p>
+            <h3>5 أمور تخليك أقوى بكتير مع Manus</h3>
+            <p class="featured-desc">
+              فيديو سينمائي بإخراج ومؤثرات بالذكاء الاصطناعي يقدّم أهم 5 استخدامات
+              لوكيل الذكاء الاصطناعي <strong>Manus</strong>: عصف ذهني هولوغرامي للكلمات والأفكار،
+              إنشاء وبرمجة على مكتب مستقبلي، ثم تسليم العمل النهائي — بمشاهد يستحيل تصويرها تقليديًا.
+            </p>
+
+            <div class="featured-commands" aria-hidden="true">
+              <span class="cmd">/brainstorm</span>
+              <span class="cmd">/create</span>
+              <span class="cmd">/export</span>
+            </div>
+
+            <div class="featured-actions">
+              <button class="btn btn-primary magnet" id="featuredSound" aria-pressed="false">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Zm-2.5-8.8v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6Z"/></svg>
+                <span id="featuredSoundLabel">شغّل الصوت</span>
+              </button>
+              <span class="featured-meta">48 ثانية · إخراج ومؤثرات بالـAI</span>
+            </div>
+          </div>
+
+          <div class="featured-stage" id="featuredStage">
+            <span class="featured-ring r1" aria-hidden="true"></span>
+            <span class="featured-ring r2" aria-hidden="true"></span>
+            <video id="featuredVideo" class="featured-video" src="assets/video/feature-workflow.mp4"
+                   poster="./assets/img/feature-poster.jpg" muted loop playsinline preload="none"
+                   aria-label="فيديو سينمائي مولد بالذكاء الاصطناعي: من الفكرة إلى التسليم"></video>
+            <button class="featured-play" id="featuredPlay" aria-label="تشغيل الفيديو المميز">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ المعرض ============ -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— المعرض</p>
+          <h2 class="section-title">لقطات من <span class="grad-text">الاستوديو</span></h2>
+          <p class="section-sub">من كواليس التصوير إلى مشاهد الذكاء الاصطناعي — اضغط أي صورة لتكبيرها</p>
+        </header>
+      </div>
+
+      <div class="gallery-rows" id="galleryRows">
+        <!-- الصفوف تُبنى عبر JavaScript لضمان التكرار السلس -->
+      </div>
+    </section>
+
+    <!-- ============ الإنجازات ============ -->
+    <section class="milestones section" id="milestones">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— إنجازات موثقة</p>
+          <h2 class="section-title">ما تحقق <span class="grad-text">فعلًا</span></h2>
+        </header>
+        <div class="milestone-grid">
+          <article class="milestone-card reveal" data-delay="1">
+            <span class="ms-num">01</span>
+            <h3>علامة شخصية كاملة</h3>
+            <p>بناء هوية AHMIX من الصفر: شعار، هوية بصرية، استوديو عمل بمحتوى مخصص، وأسلوب تقديم فريد.</p>
+          </article>
+          <article class="milestone-card reveal" data-delay="2">
+            <span class="ms-num">02</span>
+            <h3>محتوى تعليمي بالعربية</h3>
+            <p>إنتاج حلقات تعليمية عن الذكاء الاصطناعي وChatGPT بأسلوب مبسط عبر فيسبوك وإنستجرام وتيك توك.</p>
+          </article>
+          <article class="milestone-card reveal" data-delay="3">
+            <span class="ms-num">03</span>
+            <h3>إنتاج AI متكامل</h3>
+            <p>إعلانات وفيديوهات وصور فنية مولّدة بالكامل بالذكاء الاصطناعي — من البرومبت إلى النتيجة النهائية.</p>
+          </article>
+          <article class="milestone-card reveal" data-delay="4">
+            <span class="ms-num">04</span>
+            <h3>حضور رقمي متعدد</h3>
+            <p>منصات نشطة على فيسبوك وإنستجرام وتيك توك بمحتوى تقني وإبداعي متواصل.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ الشهادات ============ -->
+    <section class="certificates section" id="certificates">
+      <div class="certificates-glow" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— شهاداتي</p>
+          <h2 class="section-title">تعلّم <span class="grad-text">موثّق</span></h2>
+          <p class="section-sub">شهادات إتمام حقيقية من منصات عالمية — اضغط على أي شهادة لعرضها بالكامل، أو تحقق منها من مصدرها الرسمي</p>
+        </header>
+
+        <div class="cert-grid">
+          <article class="cert-card reveal" data-delay="1">
+            <button class="cert-frame" data-image="./assets/img/cert-coursera.jpg" data-title="شهادة Coursera — كيف تبدأ بتعلم Microsoft Excel" aria-label="عرض شهادة Coursera بالكامل" data-tilt>
+              <img src="./assets/img/cert-coursera.jpg" alt="شهادة Coursera للمشروع الإرشادي: كيف تبدأ بتعلم Microsoft Excel — أحمد عبدالفتاح سليم" loading="lazy">
+              <span class="frame-shine" aria-hidden="true"></span>
+            </button>
+            <span class="cert-seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+            </span>
+            <div class="cert-body">
+              <div class="cert-head">
+                <span class="cert-platform">Coursera · Guided Project</span>
+                <span class="cert-date">أغسطس 2026</span>
+              </div>
+              <h3>كيف تبدأ بتعلم Microsoft Excel</h3>
+              <p>مشروع إرشادي عملي من Coursera يشرح خطوات البدء مع Excel خطوة بخطوة — من أول جدول إلى التعامل الاحترافي مع البيانات.</p>
+              <div class="cert-meta">
+                <span>مشروع إرشادي</span>
+                <span>ساعتان تدريبيتان</span>
+              </div>
+              <div class="cert-actions">
+                <a href="https://coursera.org/verify/6RKRMMA2QMYC" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 2.5 20 6v5.5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-3.5Zm-3.5 10 2.5 2.5 4.5-5"/></svg>
+                  تحقق من الشهادة
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cert-card reveal" data-delay="2">
+            <button class="cert-frame" data-image="./assets/img/cert-udemy.jpg" data-title="شهادة Udemy — أساسيات الذكاء الاصطناعي" aria-label="عرض شهادة Udemy بالكامل" data-tilt>
+              <img src="./assets/img/cert-udemy.jpg" alt="شهادة إتمام Udemy: أساسيات الذكاء الاصطناعي — مقدمة عن تقنيات الذكاء الاصطناعي — أحمد عبدالفتاح سليم" loading="lazy">
+              <span class="frame-shine" aria-hidden="true"></span>
+            </button>
+            <span class="cert-seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+            </span>
+            <div class="cert-body">
+              <div class="cert-head">
+                <span class="cert-platform">Udemy · Certificate</span>
+                <span class="cert-date">يونيو 2025</span>
+              </div>
+              <h3>أساسيات الذكاء الاصطناعي: مقدمة عن تقنيات الذكاء الاصطناعي</h3>
+              <p>دورة من MTF Institute of Management, Technology and Finance تقدم مقدمة شاملة عن مفاهيم الذكاء الاصطناعي وتقنياته وتطبيقاته.</p>
+              <div class="cert-meta">
+                <span>دورة تدريبية</span>
+                <span>1.5 ساعة</span>
+              </div>
+              <div class="cert-actions">
+                <a href="https://ude.my/UC-2bdf9286-8475-4c12-aa4c-d2a502e9943e" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 2.5 20 6v5.5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-3.5Zm-3.5 10 2.5 2.5 4.5-5"/></svg>
+                  تحقق من الشهادة
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cert-card reveal" data-delay="3">
+            <button class="cert-frame" data-image="./assets/img/cert-excel.png" data-title="شهادة إدراك — Advanced Excel" aria-label="عرض شهادة إدراك بالكامل" data-tilt>
+              <img src="./assets/img/cert-excel.png" alt="شهادة إتمام إدراك: Advanced Excel — أحمد عبدالفتاح سليم" loading="lazy">
+              <span class="frame-shine" aria-hidden="true"></span>
+            </button>
+            <span class="cert-seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+            </span>
+            <div class="cert-body">
+              <div class="cert-head">
+                <span class="cert-platform">Edraak · Certificate</span>
+                <span class="cert-date">سبتمبر 2026</span>
+              </div>
+              <h3>Advanced Excel — مهارات متقدمة في الإكسيل</h3>
+              <p>شهادة من منصة إدراك تغطي المهارات المتقدمة في Microsoft Excel — من التنسيقات الشرطية وبناء التقارير إلى الدوال والرسوم البيانية، بـ3 ساعات تدريب تفاعلي.</p>
+              <div class="cert-meta">
+                <span>دورة تدريبية</span>
+                <span>3 ساعات تفاعلية</span>
+              </div>
+              <div class="cert-actions">
+                <a href="./assets/img/cert-excel.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 2.5 20 6v5.5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-3.5Zm-3.5 10 2.5 2.5 4.5-5"/></svg>
+                  عرض الشهادة
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ التواصل ============ -->
+    <section class="contact section" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">— تواصل معي</p>
+          <h2 class="section-title">جاهز نبدأ <span class="grad-text">مشروعك القادم؟</span></h2>
+          <p class="section-sub">اختر الطريقة الأنسب لك — رديّ سريع، وبكل حب</p>
+        </header>
+
+        <div class="contact-grid">
+          <a href="https://wa.me/201066735981" target="_blank" rel="noopener" class="contact-card wa reveal" data-delay="1">
+            <span class="cc-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1 2.56.13.17 1.76 2.67 4.25 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.28-.25-.13-1.47-.72-1.69-.81-.24-.08-.41-.12-.58.12-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.23-.74-.65-1.23-1.47-1.38-1.72-.14-.24-.02-.38.11-.5.11-.12.25-.3.37-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.34-.79-1.84-.21-.48-.42-.42-.58-.43h-.5Z"/></svg>
+            </span>
+            <div>
+              <strong>واتساب الأعمال</strong>
+              <span dir="ltr">+20 106 673 5981</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">←</span>
+          </a>
+
+          <div class="contact-card mail reveal" data-delay="2" id="emailCard" role="button" tabindex="0" aria-label="نسخ البريد الإلكتروني">
+            <span class="cc-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm0 1.5 8 5.5 8-5.5"/></svg>
+            </span>
+            <div>
+              <strong>البريد الإلكتروني</strong>
+              <span dir="ltr" id="emailText">ahmedabdlfattah.ai@gmail.com</span>
+            </div>
+            <span class="cc-hint">اضغط للنسخ</span>
+          </div>
+
+          <a href="https://www.facebook.com/share/19bzAVxiHn/" target="_blank" rel="noopener" class="contact-card reveal" data-delay="3">
+            <span class="cc-icon fb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.2h2.42l.36-2.8H13.5V9.2c0-.81.23-1.36 1.39-1.36h1.49V5.35c-.26-.03-1.14-.11-2.17-.11-2.15 0-3.62 1.31-3.62 3.72V11H8.16v2.8h2.43V21h2.91Z"/></svg>
+            </span>
+            <div>
+              <strong>فيسبوك</strong>
+              <span>صفحتي الرسمية</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">←</span>
+          </a>
+
+          <a href="https://www.instagram.com/ahmed_x_ai" target="_blank" rel="noopener" class="contact-card reveal" data-delay="4">
+            <span class="cc-icon ig">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M7.5 3.5h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.8" cy="7.2" r="1.1" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <strong>إنستجرام</strong>
+              <span dir="ltr">@ahmed_x_ai</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">←</span>
+          </a>
+
+          <a href="https://www.tiktok.com/@medo_dev_x0" target="_blank" rel="noopener" class="contact-card reveal" data-delay="5">
+            <span class="cc-icon tt">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 3c.36 1.98 1.63 3.32 3.65 3.55v2.6c-1.32.13-2.5-.24-3.65-1.02v5.65c0 4.13-3.3 5.9-5.9 5.22-2.44-.64-4.03-2.9-3.68-5.4.34-2.4 2.5-4.13 5.05-3.96v2.7c-.32-.05-.63-.08-.95-.05-1.21.1-2.05 1-1.98 2.2.06 1.1 1.03 1.96 2.16 1.9 1.2-.06 1.98-.92 1.98-2.2V3h3.32Z"/></svg>
+            </span>
+            <div>
+              <strong>تيك توك</strong>
+              <span dir="ltr">@medo_dev_x0</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">←</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ التذييل ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="./assets/img/logo-full.png" alt="شعار AHMIX" class="footer-logo" loading="lazy">
+      <nav class="footer-nav" aria-label="روابط التذييل">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من أنا</a>
+        <a href="#skills">مهاراتي</a>
+        <a href="#works">أعمالي</a>
+        <a href="#certificates">شهاداتي</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <p class="footer-line">AHMIX © 2026 — جميع الحقوق محفوظة · <span>More Than Just AI</span></p>
+    </div>
+  </footer>
+
+  <!-- زر واتساب الثابت -->
+  <a href="https://wa.me/201066735981" target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1 2.56.13.17 1.76 2.67 4.25 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.28-.25-.13-1.47-.72-1.69-.81-.24-.08-.41-.12-.58.12-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.12-1.05-.38-1.99-1.23-.74-.65-1.23-1.47-1.38-1.72-.14-.24-.02-.38.11-.5.11-.12.25-.3.37-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.34-.79-1.84-.21-.48-.42-.42-.58-.43h-.5Z"/></svg>
+    <span class="wa-pulse" aria-hidden="true"></span>
+  </a>
+
+  <button class="to-top" id="toTop" aria-label="العودة للأعلى">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 14 6-6 6 6"/></svg>
+  </button>
+
+  <!-- نافذة العرض (فيديو / صورة) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="إغلاق">&times;</button>
+    <div class="lb-stage" id="lbStage"><!-- يُملأ ديناميكيًا --></div>
+    <p class="lb-title" id="lbTitle"></p>
+  </div>
+
+  <!-- رسالة النسخ -->
+  <div class="toast" id="toast" role="status" aria-live="polite">تم نسخ البريد الإلكتروني ✓</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
